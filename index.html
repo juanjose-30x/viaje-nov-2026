@@ -298,7 +298,7 @@ footer p{max-width:80ch}
       </div>
       <div class="card warn">
         <h3>Los botones de abrir</h3>
-        <p>Llevan a la búsqueda exacta de esa fila, no a un pago. Despegar no tiene links de pago estables: los de una oferta concreta llevan un identificador de sesión que expira en minutos.</p>
+        <p>Al hacer clic pasan dos cosas: se abre la búsqueda con el destino y las fechas de esa fila, y <b>se copia el nombre del hotel a tu portapapeles</b>. En la barra lateral de Despegar, pégalo en el campo <b>«Ingrese el nombre del alojamiento»</b> y llegas a esa fila exacta. No hay link directo al hotel porque Despegar genera su identificador en el momento del clic: no existe antes y no se puede construir.</p>
       </div>
       <div class="card good">
         <h3>El líder aguantó el barrido profundo</h3>
@@ -834,7 +834,7 @@ function render(){
         +'<div class="mtr"><i style="width:'+w.toFixed(1)+'%"></i></div></div></td>'
       +'<td data-l="Vuelo">'+(r.vuelo==="DIRECTO"?'<span class="pill p-good">directo</span>':'<span class="sm">'+r.vuelo+'</span>')+'</td>'
       +'<td data-l="Nota"><span class="note">'+nt+'</span></td>'
-      +'<td class="lk">'+(lk?'<a class="go" href="'+lk[1]+'" target="_blank" rel="noopener">'+lk[0]+' ↗</a>':'<span class="nolink">sin link</span>')+'</td>'
+      +'<td class="lk">'+(lk?'<a class="go" href="'+lk[1]+'" target="_blank" rel="noopener" data-h="'+r.hotel.replace(/"/g,'&quot;')+'">'+lk[0]+' ↗</a>':'<span class="nolink">sin link</span>')+'</td>'
       +'</tr>'}).join("");
   empty.hidden=L.length>0;
   const names={hotel:"hotel",cal:"calificación",plan:"plan",salida:"salida",noches:"noches",total:"total",ppn:"precio por persona por noche",vuelo:"vuelo"};
@@ -844,6 +844,15 @@ function render(){
 document.querySelectorAll("thead th[data-k]").forEach(th=>{
   th.onclick=()=>{const k=th.dataset.k;sd=(k===sk)?-sd:1;sk=k;render()}});
 function syncFood(){rateS.disabled=!foodB.checked;render()}
+// Al abrir, copia el nombre del hotel: el buscador de Despegar tiene un filtro
+// "Ingrese el nombre del alojamiento" y ahi se pega para llegar a la fila exacta.
+tb.addEventListener("click",e=>{
+  const a=e.target.closest("a.go"); if(!a) return;
+  const n=a.dataset.h||""; if(!n) return;
+  try{ navigator.clipboard&&navigator.clipboard.writeText(n); }catch(_){}
+  const prev=a.textContent; a.textContent="nombre copiado";
+  setTimeout(()=>{a.textContent=prev},2200);
+});
 q.oninput=render;trB.onchange=render;capB.onchange=render;winB.onchange=render;
 foodB.onchange=syncFood;rateS.onchange=render;rateS.disabled=true;
 render();
