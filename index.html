@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Viaje nov 2026 · todas las opciones</title>
+<meta name="description" content="184 opciones de viaje desde Bogotá cotizadas y comparadas por costo real por persona por noche.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f6f7f5; --surface:#ffffff; --surface-2:#f0f2ef; --edge:#dfe3dd; --edge-2:#ecefe9;
+  --ink:#141a17; --ink-2:#4e5a54; --ink-3:#85918a;
+  --acc:#0d6d6d; --acc-ink:#ffffff; --acc-soft:#e3f0ee;
+  --good:#1b7f5a; --good-soft:#e2f1ea;
+  --warn:#8a5a09; --warn-soft:#f8eeda;
+  --bad:#a8342f;  --bad-soft:#f8e6e4;
+  --you:#2d5578;  --you-soft:#e0e8f0;
+  --meter:#0d6d6d; --meter-bg:#e6eae5;
+  --shadow:0 1px 2px rgba(20,26,23,.05), 0 6px 20px -12px rgba(20,26,23,.18);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --bg:#0d1214; --surface:#151d1f; --surface-2:#1b2427; --edge:#27332f; --edge-2:#1e2826;
+  --ink:#e8efeb; --ink-2:#a3b1aa; --ink-3:#71807a;
+  --acc:#45b6ac; --acc-ink:#062220; --acc-soft:#10312f;
+  --good:#5cc496; --good-soft:#0f2e24;
+  --warn:#d8a24c; --warn-soft:#312512;
+  --bad:#e08079;  --bad-soft:#30191a;
+  --you:#84aed6;  --you-soft:#16222e;
+  --meter:#45b6ac; --meter-bg:#222e2c;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0d1214; --surface:#151d1f; --surface-2:#1b2427; --edge:#27332f; --edge-2:#1e2826;
+  --ink:#e8efeb; --ink-2:#a3b1aa; --ink-3:#71807a;
+  --acc:#45b6ac; --acc-ink:#062220; --acc-soft:#10312f;
+  --good:#5cc496; --good-soft:#0f2e24;
+  --warn:#d8a24c; --warn-soft:#312512;
+  --bad:#e08079;  --bad-soft:#30191a;
+  --you:#84aed6;  --you-soft:#16222e;
+  --meter:#45b6ac; --meter-bg:#222e2c;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.55;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;margin:0;text-wrap:balance;letter-spacing:-.02em;line-height:1.08}
+h1{font-size:clamp(34px,6.5vw,62px);font-weight:800}
+h2{font-size:clamp(20px,2.8vw,27px);font-weight:700;margin-bottom:6px}
+h3{font-size:15.5px;font-weight:700;letter-spacing:-.005em;line-height:1.3}
+p{margin:0 0 11px}
+a{color:var(--acc)}
+.num{font-family:"Roboto Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.eyebrow{font-family:"Roboto Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);font-weight:600}
+.lede{color:var(--ink-2);max-width:62ch;font-size:17px}
+.sm{color:var(--ink-3);font-size:13px;line-height:1.5}
+
+/* ---------- hero ---------- */
+header{padding-block:clamp(36px,6vw,66px) 30px}
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:26px;margin-top:22px}
+@media(min-width:900px){.hgrid{grid-template-columns:1.05fr .95fr;gap:34px;align-items:start}}
+.pick{background:var(--surface);border:1px solid var(--edge);border-radius:14px;padding:24px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.pick::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--good)}
+.pick .tagline{font-family:"Roboto Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--good);font-weight:600;margin-bottom:9px}
+.pick h3{font-size:20px;margin-bottom:3px}
+.pick .where{color:var(--ink-2);font-size:14.5px;margin-bottom:16px}
+.figrow{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:4px}
+.fig{font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(30px,5.2vw,42px);letter-spacing:-.035em;line-height:1}
+.figu{color:var(--ink-3);font-size:13.5px}
+.pick ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:7px}
+.pick li{display:flex;gap:9px;font-size:14.5px;color:var(--ink-2);align-items:flex-start}
+.pick li b{color:var(--ink)}
+.dot{flex:none;width:6px;height:6px;border-radius:50%;background:var(--good);margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--edge);border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+@media(min-width:540px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--surface);padding:15px 14px}
+.stat .v{font-family:Archivo,sans-serif;font-weight:700;font-size:23px;letter-spacing:-.025em}
+.stat .k{font-size:12px;color:var(--ink-3);margin-top:1px;line-height:1.35}
+
+/* ---------- date curve ---------- */
+.curve{background:var(--surface);border:1px solid var(--edge);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow)}
+.curve h3{margin-bottom:3px}
+.bars{display:grid;gap:9px;margin-top:15px}
+.brow{display:grid;grid-template-columns:78px 1fr auto;gap:11px;align-items:center;font-size:13.5px}
+.btrack{background:var(--meter-bg);border-radius:4px;height:18px;overflow:hidden}
+.bfill{height:100%;background:var(--meter);border-radius:0 4px 4px 0;opacity:.45}
+.brow.best .bfill{opacity:1}
+.brow.you .bfill{background:var(--you);opacity:.9}
+.blab{color:var(--ink-2);white-space:nowrap}
+.bval{font-family:"Roboto Mono",monospace;font-size:12.5px;font-variant-numeric:tabular-nums;color:var(--ink-2);white-space:nowrap}
+.brow.best .bval,.brow.best .blab{color:var(--ink);font-weight:600}
+
+/* ---------- controls ---------- */
+.tools{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--edge);padding-block:11px;margin-top:8px}
+.trow{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.search{position:relative;flex:1 1 210px;min-width:0}
+.search input{width:100%;padding:9px 13px;font:inherit;font-size:15px;border:1px solid var(--edge);
+  background:var(--surface);color:var(--ink);border-radius:9px}
+.search input:focus{outline:2px solid var(--acc);outline-offset:-1px}
+.sw{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;color:var(--ink-2);cursor:pointer;
+  background:var(--surface);border:1px solid var(--edge);border-radius:9px;padding:8px 12px;white-space:nowrap;user-select:none}
+.sw input{width:16px;height:16px;accent-color:var(--acc);cursor:pointer;margin:0}
+.sw:has(input:checked){border-color:var(--acc);color:var(--ink);background:var(--acc-soft)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.chip{font:inherit;font-size:12.5px;font-weight:600;padding:5px 12px;border:1px solid var(--edge);
+  background:var(--surface);color:var(--ink-2);border-radius:99px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+.chip:focus-visible,.sw:focus-within{outline:2px solid var(--acc);outline-offset:2px}
+.meta{font-size:12.5px;color:var(--ink-3);margin-top:9px;font-family:"Roboto Mono",monospace}
+
+/* ---------- table ---------- */
+.tblwrap{overflow-x:auto;border:1px solid var(--edge);border-radius:14px;background:var(--surface);margin-top:14px;box-shadow:var(--shadow)}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:1090px;font-size:14px}
+thead th{position:sticky;top:0;z-index:2;background:var(--surface-2);font-family:"Roboto Mono",monospace;
+  font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;
+  text-align:left;padding:11px 11px;border-bottom:1px solid var(--edge);white-space:nowrap;cursor:pointer;user-select:none}
+thead th:hover{color:var(--ink)}
+thead th.on{color:var(--acc)}
+th .ar{opacity:.5;margin-left:4px;font-size:9px}
+tbody td{padding:11px 11px;border-bottom:1px solid var(--edge-2);vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:var(--surface-2)}
+tbody tr.you td{background:var(--you-soft)}
+tbody tr.best td{background:var(--good-soft)}
+.hotel{font-weight:600;line-height:1.3}
+.dest{color:var(--ink-3);font-size:12.5px;margin-top:1px}
+td.r{text-align:right;white-space:nowrap}
+.money{font-family:"Roboto Mono",monospace;font-variant-numeric:tabular-nums;font-size:13.5px}
+.ppn{font-family:"Roboto Mono",monospace;font-variant-numeric:tabular-nums;font-weight:600;font-size:14.5px}
+.mtr{width:74px;height:5px;border-radius:3px;background:var(--meter-bg);margin:5px 0 0 auto;overflow:hidden}
+.mtr i{display:block;height:100%;background:var(--meter);border-radius:0 3px 3px 0}
+.pill{display:inline-block;font-family:"Roboto Mono",monospace;font-size:10px;letter-spacing:.04em;
+  padding:2px 7px;border-radius:4px;font-weight:600;white-space:nowrap}
+.p-good{background:var(--good-soft);color:var(--good)}
+.p-warn{background:var(--warn-soft);color:var(--warn)}
+.p-bad{background:var(--bad-soft);color:var(--bad)}
+.p-you{background:var(--you-soft);color:var(--you)}
+.delta{font-family:"Roboto Mono",monospace;font-size:11.5px;font-weight:600}
+.dg{color:var(--good)} .db{color:var(--bad)}
+.note{color:var(--ink-3);font-size:11.5px;line-height:1.35;max-width:19ch;display:inline-block}
+.go{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:700;padding:5px 10px;
+  border-radius:7px;background:var(--acc);color:var(--acc-ink);text-decoration:none;white-space:nowrap}
+.go:hover{filter:brightness(1.1)}
+.nolink{color:var(--ink-3);font-size:12px}
+.empty{padding:36px;text-align:center;color:var(--ink-3)}
+
+/* ---------- cards on phone ---------- */
+@media(max-width:719px){
+  .tblwrap{overflow:visible;border:none;background:none;box-shadow:none;border-radius:0}
+  table,thead,tbody,tr,td{display:block;width:auto;min-width:0}
+  thead{display:none}
+  tbody tr{background:var(--surface);border:1px solid var(--edge);border-radius:13px;
+    padding:14px;margin-bottom:11px;box-shadow:var(--shadow);position:relative}
+  tbody tr.you{border-color:var(--you)} tbody tr.best{border-color:var(--good)}
+  tbody tr:hover td,tbody tr.you td,tbody tr.best td{background:none}
+  tbody td{border:none;padding:0;display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+    font-size:13.5px;padding-block:3px}
+  tbody td::before{content:attr(data-l);color:var(--ink-3);font-size:11.5px;
+    font-family:"Roboto Mono",monospace;letter-spacing:.06em;text-transform:uppercase;flex:none}
+  tbody td.hd{display:block;padding-bottom:9px;margin-bottom:8px;border-bottom:1px solid var(--edge-2)}
+  tbody td.hd::before{display:none}
+  td.r{text-align:right}
+  .mtr{margin-top:6px;width:100%}
+  tbody td.lk{padding-top:11px;justify-content:flex-start}
+  tbody td.lk::before{display:none}
+  .note{max-width:none;text-align:right}
+}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(30px,5vw,52px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(262px,1fr));gap:13px;margin-top:14px}
+.card{background:var(--surface);border:1px solid var(--edge);border-radius:13px;padding:17px 19px;box-shadow:var(--shadow)}
+.card p{font-size:14px;color:var(--ink-2);margin:6px 0 0}
+.card.bad{border-top:3px solid var(--bad)}
+.card.warn{border-top:3px solid var(--warn)}
+.card.good{border-top:3px solid var(--good)}
+footer{border-top:1px solid var(--edge);padding-block:26px 46px;color:var(--ink-3);font-size:12.5px}
+footer p{max-width:80ch}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <p class="eyebrow">Cotizado el 21 de septiembre de 2026</p>
+  <h1>Bogotá,<br>noviembre 2026</h1>
+  <p class="lede" style="margin-top:14px">Ciento ochenta y cuatro combinaciones de destino, hotel, fecha y duración. Todas vistas en pantalla, todas para dos adultos con vuelo incluido, todas comparadas por el único número que sirve: lo que cuesta cada noche por persona.</p>
+
+  <div class="hgrid">
+    <div class="pick">
+      <p class="tagline">El mínimo de toda la tabla</p>
+      <h3>MAYAN ART Hotel Boutique</h3>
+      <p class="where">Playa del Carmen · 28 nov → 8 dic · 10 noches</p>
+      <div class="figrow">
+        <span class="fig num">$4.131.198</span>
+        <span class="figu">total, los dos</span>
+      </div>
+      <div class="figrow">
+        <span class="num" style="font-size:19px;font-weight:600;color:var(--good)">$206.560</span>
+        <span class="figu">por persona, por noche</span>
+      </div>
+      <ul>
+        <li><span class="dot"></span><span>Hotel <b>8.8</b>, playa a siete minutos caminando, una sola reserva</span></li>
+        <li><span class="dot"></span><span>Contra tu link de Cancún: <b>$1.468.216 menos</b> y dos noches más</span></li>
+        <li><span class="dot"></span><span>Con el traslado sumado quedan en $215.460 y <b>sigue ganando</b></span></li>
+      </ul>
+    </div>
+
+    <div style="display:grid;gap:13px;align-content:start">
+      <div class="stats">
+        <div class="stat"><div class="v num">184</div><div class="k">opciones cotizadas</div></div>
+        <div class="stat"><div class="v num">39</div><div class="k">destinos barridos</div></div>
+        <div class="stat"><div class="v num">13</div><div class="k">plataformas cruzadas</div></div>
+        <div class="stat"><div class="v num">41%</div><div class="k">menos por noche</div></div>
+      </div>
+
+      <div class="curve">
+        <h3>Mover la fecha vale más que mover el hotel</h3>
+        <p class="sm" style="margin:0">Mismo hotel, mismas diez noches. Sólo cambia el día de salida.</p>
+        <div class="bars" id="curve"></div>
+        <p class="sm" style="margin:13px 0 0">Y la de nueve noches cuesta <b style="color:var(--ink)">$210.044 más en total</b> que la de diez: una noche menos, más plata.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="tools">
+  <div class="wrap">
+    <div class="trow">
+      <div class="search"><input type="search" id="q" placeholder="Buscar hotel, destino, plan…" autocomplete="off" aria-label="Buscar"></div>
+      <label class="sw"><input type="checkbox" id="tr"> Sumar traslado</label>
+      <label class="sw"><input type="checkbox" id="cap"> Bajo 8 millones</label>
+      <label class="sw"><input type="checkbox" id="win"> Sólo las que ganan</label>
+    </div>
+    <div class="chips" id="chips"></div>
+    <p class="meta" id="meta"></p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="tblwrap">
+    <table>
+      <thead><tr>
+        <th data-k="hotel">Hotel y destino<span class="ar">↕</span></th>
+        <th data-k="cal" class="r">Cal.<span class="ar">↕</span></th>
+        <th data-k="plan">Plan<span class="ar">↕</span></th>
+        <th data-k="salida">Salida<span class="ar">↕</span></th>
+        <th data-k="noches" class="r">Noches<span class="ar">↕</span></th>
+        <th data-k="total" class="r">Total 2 pax<span class="ar">↕</span></th>
+        <th data-k="ppn" class="r">Por pers./noche<span class="ar">↕</span></th>
+        <th data-k="vuelo">Vuelo<span class="ar">↕</span></th>
+        <th>Nota</th>
+        <th></th>
+      </tr></thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </div>
+  <div class="empty" id="empty" hidden>Nada coincide con ese filtro.</div>
+</div>
+
+<div class="wrap">
+  <section>
+    <h2>Cómo leer esto</h2>
+    <div class="grid">
+      <div class="card good">
+        <h3>La columna que manda</h3>
+        <p>El precio por persona por noche es lo único comparable entre viajes de 7, 8, 10 y 14 noches. El total engaña: un viaje más largo cuesta más en total y puede ser mucho más barato por noche.</p>
+      </div>
+      <div class="card">
+        <h3>El interruptor de traslado</h3>
+        <p>Ningún precio de agencia incluye el traslado del aeropuerto al hotel. Actívalo y la tabla se reordena: Playa del Carmen carga $178.000 por estar a una hora de Cancún, y Tulum $294.000 por estar a dos.</p>
+      </div>
+      <div class="card warn">
+        <h3>Los botones de abrir</h3>
+        <p>Llevan a la búsqueda exacta de esa fila, no a un pago. Despegar no tiene links de pago estables: los de una oferta concreta llevan un identificador de sesión que expira en minutos.</p>
+      </div>
+      <div class="card bad">
+        <h3>El precio real</h3>
+        <p>Todos los números de aquí son los de «otros medios de pago». La vitrina de Despegar muestra unos $300.000 menos, pero exige tarjeta Banco de Bogotá Despegar Mastercard.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Seis trampas que hay en esta tabla</h2>
+    <p class="lede" style="font-size:15.5px">Todas verificadas. Están marcadas fila por fila con la etiqueta <span class="pill p-bad">ojo</span></p>
+    <div class="grid">
+      <div class="card bad"><h3>Emporio Cancún no es all inclusive</h3><p>Booking lo lista como «Buy All Inclusive Option». El plan cuesta MXN 14.892 aparte, un 61% sobre la tarifa. El precio de la tabla es sólo habitación.</p></div>
+      <div class="card bad"><h3>La Romana aterriza en Punta Cana</h3><p>Se venden con etiqueta de vuelo directo, pero el avión llega a otro aeropuerto y queda un traslado terrestre largo que ninguna agencia advierte.</p></div>
+      <div class="card bad"><h3>«El Faro Beach Front» está en Holbox</h3><p>Aparece entre los veinte más baratos del listado de Cancún. Está a 70 kilómetros: carro más ferry.</p></div>
+      <div class="card bad"><h3>El nombre no dice dónde está</h3><p>El Krystal Urban «&amp; Beach Club» está en el Centro de Cancún, no en la zona hotelera. De los veinte más baratos de Cancún, sólo tres están realmente allá.</p></div>
+      <div class="card bad"><h3>Los apartamentos de Vallarta</h3><p>Salen baratos pero son estudios sin recepción, a 2,9 km de la playa, y exigen dos reservas no reembolsables sin protección entre ellas.</p></div>
+      <div class="card bad"><h3>Vuelos sin maleta</h3><p>Viva Aerobus listaba 2,45 millones y con maleta de bodega sube a 3,10. Sin cotizar la maleta, ningún precio de vuelo es real.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lo que no cabe, con números</h2>
+    <div class="grid">
+      <div class="card"><h3>Europa</h3><p>Madrid, Lisboa, Roma, Barcelona y París cotizadas a 7 y 10 noches. Ninguna cabe. El vuelo BOG–Madrid directo se lleva $7.061.580, el 88% del techo. Lisboa fue la más cerca y faltaban $1.318.010.</p></div>
+      <div class="card"><h3>Cruceros</h3><p>Ni Royal Caribbean ni MSC zarpan de Cartagena o Colón en esa ventana. Desde Miami el mejor queda en $572.500 por persona/noche. Todos exigen visa americana y cobran propinas obligatorias aparte.</p></div>
+      <div class="card"><h3>All inclusive</h3><p>Ninguno baja del precio por noche del líder. El más barato real es Decameron San Andrés a $452.850. El punto de equilibrio serían $246.290 por persona por día en comida y bebida.</p></div>
+      <div class="card"><h3>La temporada que no existe</h3><p>No hay precipicio el 15 de diciembre para este origen. La serie de diez noches que cruza esa fecha va $234.449, $254.030, $265.229, $256.848: ruido, no escalón. El 28 de noviembre es barato por el vuelo, no por la temporada.</p></div>
+    </div>
+  </section>
+</div>
+
+<footer class="wrap">
+  <p><b>Fuentes.</b> Despegar Colombia, Booking.com, Google Flights, Kayak, Expedia, Hoteles.com, Priceline, Agoda, Trivago, IHG, Marriott, RIU, Bahía Príncipe, Viajes Falabella, On Vacation, Royal Caribbean y MSC. Trece plataformas; Expedia, Price Travel, Aviatur y Almundo bloquearon con captcha o no cargaron y quedaron sin datos, declarados como huecos y no como resultados.</p>
+  <p style="margin-top:9px">Tasas de referencia del 21 de septiembre de 2026: USD 3.165,61 y MXN 183,75 por peso colombiano. Las tarifas aéreas y hoteleras cambian a diario: reconfirma cualquier cifra el día del pago.</p>
+</footer>
+
+<script>
+const TR={"Playa del Carmen":178000,"Riviera Maya":178000,"Cancún":80000,"Tulum":294000,"Punta Cana":150000,
+"San Andrés":60000,"Cartagena":60000,"Santa Marta":60000,"Aruba":120000,"Curazao":120000,"Puerto Vallarta":92000,
+"La Romana":250000,"Puerto Plata":120000,"Panamá":150000,"Florianópolis":120000,"Salvador":100000,
+"Río de Janeiro":100000,"Natal":100000,"Fortaleza":100000,"Madrid":100000,"Lisboa":100000,"Roma":100000,
+"París":100000,"Barcelona":100000,"Cozumel":150000,"Isla Mujeres":150000,"Mazatlán":90000,"Mérida":90000,
+"Campeche":90000,"Puerto Escondido":90000,"Los Cabos":90000,"Huatulco":90000,"Bacalar":250000,"San Juan":120000,
+"Jamaica":120000,"Nassau":120000,"Isla Margarita":120000,"Roatán":150000,"Crucero":0};
+const CIT={"Playa del Carmen":"CIT_5584","Riviera Maya":"CIT_5584","Cancún":"CIT_1569","Punta Cana":"CIT_5963",
+"San Andrés":"CIT_89","Cartagena":"CIT_1535","Santa Marta":"CIT_6890","Aruba":"CIT_420","Curazao":"CIT_1573"};
+const CURVE=[["28 nov",4131198,"best"],["29 nov",4693022,""],["30 nov",4539384,""],["4 dic",5269350,""],["5 dic",4688984,""]];
+const D=[
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","28 nov",10,4131198,"escala","No frente al mar; sobre la 10a avenida",""],
+["Playa del Carmen","Live Coco Suites","8.4","solo","28 nov",10,4190152,"escala","Boutique con rooftop",""],
+["Playa del Carmen","Casa Maca","8.2","solo","28 nov",10,4356558,"escala","",""],
+["Playa del Carmen","Studio 30 Condhotel","8.4","solo","28 nov",10,4603826,"escala","",""],
+["Playa del Carmen","Casa Kaoba Hotel & Suites","8.2","desayuno","28 nov",10,4748174,"escala","",""],
+["Playa del Carmen","La Pasión Hotel Boutique","—","solo","28 nov",10,5603356,"escala","",""],
+["Playa del Carmen","Wyndham Garden","7.8","desayuno","28 nov",10,5921206,"escala","",""],
+["Playa del Carmen","The Reef Coco Beach Resort","—","solo","28 nov",10,8299370,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","28 nov",14,5819188,"escala","Estirar ya no mejora",""],
+["Playa del Carmen","Live Coco Suites","8.4","solo","28 nov",14,5880908,"escala","",""],
+["Playa del Carmen","Casa Maca","8.2","solo","28 nov",14,6130808,"escala","",""],
+["Playa del Carmen","Studio 30 Condhotel","8.4","solo","28 nov",14,6455624,"escala","",""],
+["Playa del Carmen","Casa Kaoba Hotel & Suites","8.2","desayuno","28 nov",14,6681334,"escala","",""],
+["Playa del Carmen","Hotel Coco Rio","8.6","solo","28 nov",14,6984528,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","28 nov",9,4341242,"escala","Cuesta MAS que diez noches",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","28 nov",11,4632638,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","29 nov",9,5144684,"escala","Un día después, 18% más caro",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","29 nov",10,4693022,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","29 nov",11,4913788,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","30 nov",7,4269226,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","30 nov",8,3958320,"escala","",""],
+["Playa del Carmen","Live Coco Suites","8.4","solo","30 nov",8,3976704,"escala","",""],
+["Playa del Carmen","Studio 30 Condhotel","8.4","solo","30 nov",8,4304150,"escala","",""],
+["Playa del Carmen","Casa Kaoba Hotel & Suites","8.2","desayuno","30 nov",8,4452060,"escala","",""],
+["Playa del Carmen","Hotel Coco Rio","8.6","solo","30 nov",8,4617392,"escala","",""],
+["Playa del Carmen","La Pasión Hotel Boutique","—","solo","30 nov",8,5039922,"escala","",""],
+["Playa del Carmen","Wyndham Garden","7.8","desayuno","30 nov",8,5285944,"escala","",""],
+["Playa del Carmen","The Reef Coco Beach Resort","—","solo","30 nov",8,6999082,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","30 nov",9,4446130,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","30 nov",10,4539384,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","30 nov",11,4629430,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","1 dic",8,4362638,"escala","",""],
+["Playa del Carmen","Live Coco Suites","8.4","solo","1 dic",10,5462852,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","2 dic",8,4876440,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","3 dic",8,5267080,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","4 dic",10,5269350,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","5 dic",10,4688984,"escala","La mejor de diciembre",""],
+["Playa del Carmen","Live Coco Suites","8.4","solo","6 dic",10,5080600,"escala","",""],
+["Playa del Carmen","Live Coco Suites","8.4","solo","8 dic",10,5304570,"escala","Regresa el 18, cruza el 15",""],
+["Playa del Carmen","Live Coco Suites","8.4","solo","10 dic",10,5136968,"escala","Regresa el 20 de diciembre",""],
+["Playa del Carmen","Live Coco Suites","8.4","solo","4 dic",8,4508010,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","6 dic",8,5453450,"escala","",""],
+["Playa del Carmen","MAYAN ART Hotel Boutique","8.8","solo","8 dic",8,5084606,"escala","",""],
+["Playa del Carmen","Live Coco Suites","8.4","solo","10 dic",8,5116678,"escala","",""],
+["Riviera Maya","Live Coco Suites","8.4","solo","28 nov",7,3975718,"escala","",""],
+["Riviera Maya","Casa Kaoba Hotel & Suites","8.2","desayuno","28 nov",7,4361708,"escala","",""],
+["Riviera Maya","The Reef Playacar","8.2","AI","28 nov",7,6699470,"escala","",""],
+["Riviera Maya","Riu Tequila","8.8","AI","28 nov",7,7899398,"escala","",""],
+["Riviera Maya","Riu Yucatán","8.6","AI","28 nov",7,7999263,"escala","",""],
+["Riviera Maya","BlueBay Grand Esmeralda","6.8","AI","30 nov",8,7199168,"escala","",""],
+["Cancún","Cancún Plaza","—","solo","30 nov",8,4133096,"escala","Centro",""],
+["Cancún","Caribe Internacional","6.2","solo","30 nov",8,4164784,"escala","Centro, Mercado 28",""],
+["Cancún","Hotel Los Girasoles","8.8","solo","30 nov",8,4300504,"escala","Centro, Mercado 28",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","30 nov",8,4491740,"escala","Zona hotelera; posible resort fee",""],
+["Cancún","Suites Ha","—","solo","30 nov",8,4538286,"escala","Salinas, 14 km del centro",""],
+["Cancún","Hotel Kavia Plus","8.4","solo","30 nov",8,4541244,"escala","Centro",""],
+["Cancún","Hotel Plaza Caribe","7.8","solo","30 nov",8,4559944,"escala","Centro, frente a la central de buses",""],
+["Cancún","Hotel Kavia","7.8","solo","30 nov",8,4560208,"escala","Centro",""],
+["Cancún","Nílu Cancún by Selina","7.8","solo","30 nov",8,4599014,"escala","Zona hotelera, Playa Forum",""],
+["Cancún","CASA ULA","8.7","solo","30 nov",8,4715828,"escala","Centro",""],
+["Cancún","ibis Cancún Centro","8.6","solo","30 nov",8,4728246,"escala","Centro",""],
+["Cancún","El Faro Beach Front","—","solo","30 nov",8,4734396,"escala","TRAMPA: está en Holbox, a 70 km",""],
+["Cancún","Ambiance Suites","8.4","solo","30 nov",8,4803422,"escala","Centro",""],
+["Cancún","Pachamaya Holistic (adultos)","—","solo","30 nov",8,4834518,"escala","Centro",""],
+["Cancún","Hotel Luma by Kavia","8.4","solo","30 nov",8,4899348,"escala","Centro, Parque de las Palapas",""],
+["Cancún","Bsea Cancún Plaza","7.6","solo","30 nov",8,4899510,"escala","Zona hotelera, Playa Delfines",""],
+["Cancún","Hotel Puerto Juárez","—","solo","30 nov",8,4944750,"escala","Muelle a Isla Mujeres",""],
+["Cancún","VICA Guest House","—","solo","30 nov",8,4987610,"escala","Centro",""],
+["Cancún","Krystal Urban & Beach Club","8.2","solo","30 nov",8,4999650,"escala","Centro; el mismo hotel de tu link",""],
+["Cancún","Bright & Relaxing Apartment","8.3","solo","30 nov",8,5099200,"escala","7 km del centro",""],
+["Cancún","Fairfield Inn by Marriott","9.2","desayuno","30 nov",8,5299183,"escala","Junto al aeropuerto",""],
+["Cancún","Residence Inn by Marriott","8.8","desayuno","30 nov",8,5899226,"escala","Zona hotelera",""],
+["Cancún","Emporio Cancún","8.1","solo","30 nov",8,6659984,"escala","TRAMPA: el all inclusive se paga aparte",""],
+["Cancún","Krystal Cancún","7.9","solo","30 nov",8,6999557,"escala","",""],
+["Cancún","Presidente InterContinental","8.5","solo","30 nov",8,7139922,"escala","Resort fee USD 16,38 por noche aparte",""],
+["Cancún","GR Solaris Cancún","—","AI","30 nov",8,8199920,"escala","",""],
+["Cancún","Flamingo Cancún Resort","7.3","AI","30 nov",8,8249935,"escala","",""],
+["Cancún","Royal Solaris Cancún","7.9","AI","30 nov",8,8399682,"escala","",""],
+["Cancún","Grand Oasis Palm","6.9","AI","30 nov",8,8499617,"escala","",""],
+["Cancún","GR Solaris Caribe (adultos)","8.2","AI","30 nov",8,8959952,"escala","",""],
+["Cancún","Riu Dunamar","8.5","AI","30 nov",8,9199629,"escala","",""],
+["Cancún","Riu Ventura","8.9","AI","30 nov",8,9399309,"escala","",""],
+["Cancún","Hotel Puerto Juárez","—","solo","28 nov",8,5229396,"escala","",""],
+["Cancún","Krystal Urban & Beach Club","8.2","solo","28 nov",8,5349948,"escala","",""],
+["Cancún","Aquamarina Beach Hotel","7.5","solo","28 nov",8,5628546,"escala","",""],
+["Cancún","Fairfield Inn by Marriott","9.2","desayuno","28 nov",8,5739918,"escala","",""],
+["Cancún","Residence Inn by Marriott","8.8","desayuno","28 nov",8,6199190,"escala","",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","28 nov",10,4809250,"escala","Zona hotelera; el mejor de Cancún",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","28 nov",9,4952464,"escala","",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","28 nov",11,5377524,"escala","",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","29 nov",10,5357276,"escala","",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","29 nov",11,5658674,"escala","",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","29 nov",9,5750850,"escala","",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","30 nov",7,4737212,"escala","",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","30 nov",9,5057352,"escala","",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","30 nov",10,5217438,"escala","",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","30 nov",11,5359118,"escala","",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","2 dic",8,5411098,"escala","",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","3 dic",8,5801740,"escala","",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","1 dic",10,6124226,"escala","",""],
+["Cancún","Hotel Puerto Juárez","—","solo","1 dic",8,5323856,"escala","",""],
+["Cancún","Krystal Urban & Beach Club","8.2","solo","1 dic",8,5459952,"escala","",""],
+["Cancún","Fairfield Inn by Marriott","9.2","desayuno","1 dic",8,5699017,"escala","",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","28 nov",10,5910936,"escala","",""],
+["Cancún","Krystal Urban & Beach Club","8.2","solo","28 nov",10,6649912,"escala","",""],
+["Cancún","Fairfield Inn by Marriott","9.2","desayuno","28 nov",10,7099104,"escala","",""],
+["Cancún","Hotel Puerto Juárez","—","solo","29 nov",8,5463694,"escala","",""],
+["Cancún","Krystal Urban & Beach Club","8.2","solo","29 nov",8,5599414,"escala","TU LINK ORIGINAL","base"],
+["Cancún","Fairfield Inn by Marriott","9.2","desayuno","29 nov",8,5949923,"escala","",""],
+["Cancún","Residence Inn by Marriott","8.8","desayuno","29 nov",8,6449975,"escala","",""],
+["Cancún","Presidente InterContinental","8.5","solo","29 nov",8,7839924,"escala","",""],
+["Tulum","Simple Stays Tulum","8.4","solo","30 nov",8,4104174,"escala","Dos horas de carretera desde Cancún",""],
+["Punta Cana","Playa Palmera Beach Resort","8.6","solo","30 nov",8,5639978,"DIRECTO","",""],
+["Punta Cana","Honky Tonk Punta Cana","8.2","desayuno","30 nov",8,5699084,"DIRECTO","",""],
+["Punta Cana","Honky Tonk Punta Cana","8.2","desayuno","28 nov",10,6199618,"DIRECTO","",""],
+["Punta Cana","NOK Tropical Vistacana","—","solo","28 nov",10,7225244,"DIRECTO","",""],
+["Punta Cana","NOK Tropical Vistacana","—","solo","29 nov",7,6223174,"DIRECTO","",""],
+["Punta Cana","Riu Bambu","7.8","AI","29 nov",7,7849917,"DIRECTO","",""],
+["Punta Cana","Impressive Punta Cana","7.9","AI","29 nov",7,7999767,"DIRECTO","",""],
+["Punta Cana","Riu Bambu","7.8","AI","28 nov",10,9599758,"DIRECTO","",""],
+["Punta Cana","Impressive Punta Cana","7.9","AI","28 nov",10,9859973,"DIRECTO","",""],
+["Punta Cana","Riu República (adultos)","7.3","AI","28 nov",10,9994359,"DIRECTO","",""],
+["Punta Cana","Bahía Príncipe Esmeralda","8.6","AI","28 nov",10,10991706,"DIRECTO","",""],
+["Punta Cana","RIU Palace Punta Cana","8.4","AI","28 nov",10,11995931,"DIRECTO","",""],
+["Punta Cana","Riu Palace Bávaro","8.7","AI","28 nov",10,12996128,"DIRECTO","",""],
+["Santa Marta","Hotel Aguamarina","8.3","desayuno","30 nov",8,1608824,"DIRECTO","Nacional: es otro viaje",""],
+["Cartagena","Oresca Hostel","8.8","desayuno","30 nov",8,1933792,"DIRECTO","Nacional; es hostel",""],
+["Cartagena","Ayenda Cartagena Blue 1804","8.1","solo","30 nov",7,1892910,"DIRECTO","Nacional",""],
+["San Andrés","Posada Cultural Bahía Sonora","8.5","solo","30 nov",7,2031598,"DIRECTO","Nacional",""],
+["San Andrés","Decameron San Luis","—","AI","30 nov",7,6339901,"DIRECTO","El AI más barato del barrido",""],
+["San Andrés","Decameron Los Delfines","7.2","AI","30 nov",8,7599051,"DIRECTO","Nacional",""],
+["Panamá","Playa Blanca Golf & Beach Villa","—","solo","28 nov",10,5399649,"DIRECTO","Río Hato",""],
+["Panamá","Playa Blanca Golf & Beach Villa","—","solo","30 nov",8,4866158,"DIRECTO","Río Hato",""],
+["Panamá","Playa Blanca Golf & Beach Villa","—","solo","30 nov",7,4588052,"DIRECTO","Río Hato",""],
+["Aruba","Maria Mulata Apartments","9.2","solo","28 nov",10,6971732,"DIRECTO","Es apartamento",""],
+["Curazao","Sonesta Livingstone","8.3","solo","28 nov",10,7680970,"escala","",""],
+["Puerto Plata","Casa Azul Apartment","9.4","solo","30 nov",8,4765660,"escala","Es apartamento",""],
+["Puerto Plata","Cozy Apt Gated Costambar","—","solo","30 nov",8,5201122,"escala","",""],
+["Puerto Plata","Dinasty Hotel","—","desayuno","30 nov",8,5354498,"escala","",""],
+["La Romana","Glamour Hotel","5.2","solo","30 nov",8,4537670,"DIRECTO a PUJ","TRAMPA: aterriza en Punta Cana",""],
+["La Romana","Hotel La Romana Center","6.8","desayuno","30 nov",8,4559918,"DIRECTO a PUJ","TRAMPA: aterriza en Punta Cana",""],
+["La Romana","Apartamentos Melya","8.8","solo","30 nov",8,5081996,"DIRECTO a PUJ","TRAMPA: aterriza en Punta Cana",""],
+["La Romana","Palmares Suites","8.6","solo","30 nov",8,5549950,"DIRECTO a PUJ","",""],
+["San Juan","Room 1 Stylish Suite","9.8","solo","30 nov",8,6143258,"escala","Puerto Rico; exige visa",""],
+["Jamaica","A taste of Jamaica, Ocho Ríos","8.8","solo","30 nov",8,6479664,"escala","",""],
+["Jamaica","Unity Villa, Montego Bay","—","solo","30 nov",8,6578354,"escala","",""],
+["Cozumel","Caribo Cozumel","9.2","solo","30 nov",8,7099851,"escala","",""],
+["Isla Margarita","Hotel Margarita Village","—","AI","30 nov",8,7839910,"escala","",""],
+["Nassau","Simply Native B&B","—","solo","30 nov",8,8199197,"escala","Bahamas",""],
+["Roatán","Ibagari Boutique Hotel","9.8","AI","30 nov",8,56582470,"escala","El vuelo lo dispara",""],
+["Florianópolis","Rede Andrade Cecomtur","7.1","desayuno","28 nov",10,4855924,"escala","Brasil",""],
+["Florianópolis","Ilha Forte Praia Hotel","9.1","desayuno","28 nov",10,5124016,"escala","Ida de 13 h 25; sin maleta",""],
+["Florianópolis","HANNA Marina's Palace","8.3","desayuno","28 nov",7,4291598,"escala","",""],
+["Salvador","Rede Andrade Ondina","7.1","desayuno","28 nov",10,5853342,"escala","Frente al mar; maleta incluida",""],
+["Río de Janeiro","Hotel Monte Alegre","8.9","desayuno","28 nov",10,6027200,"escala","Lapa/Centro, sin playa",""],
+["Río de Janeiro","Hotel Monte Alegre","8.9","desayuno","28 nov",7,5634090,"escala","",""],
+["Natal","Sirius Beach Hotel","8.5","desayuno","28 nov",10,7358128,"escala","",""],
+["Fortaleza","Marbello Ariaú Hotel","8.2","desayuno","28 nov",10,7381102,"escala","",""],
+["Isla Mujeres","Hotel & Restaurant Bucaneros","—","solo","30 nov",8,4856080,"escala","",""],
+["Mazatlán","Sleep Inn Mazatlán","—","desayuno","30 nov",8,5537952,"escala","Pacífico",""],
+["Mérida","Hotel Mucuy","—","desayuno","30 nov",8,5754384,"escala","Sin playa",""],
+["Campeche","Nicte Ha Campeche","—","solo","30 nov",8,6036048,"escala","Sin playa",""],
+["Puerto Escondido","Casa Piedra Parada","—","solo","30 nov",8,6905120,"escala","Pacífico",""],
+["Puerto Vallarta","Hampton Inn Nuevo Vallarta","—","desayuno","30 nov",8,7058560,"escala","Como paquete es caro",""],
+["Los Cabos","Hotel Colli","—","solo","30 nov",8,7499024,"escala","Pacífico",""],
+["Huatulco","Mexico Lindo","—","solo","30 nov",8,7583792,"escala","Pacífico",""],
+["Bacalar","Hotel Casa Ariana","—","solo","30 nov",8,16833472,"escala","Muy caro por el vuelo",""],
+["Puerto Vallarta","LOS SAUCES + Viva","8.9","solo","30 nov",8,3902044,"escala NLU","Dos reservas; a 2,9 km de la playa",""],
+["Puerto Vallarta","LOS SAUCES + Viva","8.9","solo","30 nov",9,4351000,"escala NLU","Estimado: maleta imputada",""],
+["Puerto Vallarta","hostal la playa + Viva","—","solo","30 nov",8,3757124,"escala NLU","Sólo cuatro reseñas",""],
+["Panamá","Acuarela Farallón + Copa Classic","—","solo","30 nov",8,4548000,"DIRECTO","Desempaquetado",""],
+["Madrid","Ibis Budget Aeropuerto","—","solo","28 nov",10,9670968,"DIRECTO","Europa: no cabe",""],
+["Lisboa","Lisboa Central Hostel","—","desayuno","28 nov",10,9318010,"escala","Europa: no cabe",""],
+["Lisboa","easyHotel Lisbon","—","solo","28 nov",7,9542990,"escala","Europa: no cabe",""],
+["Roma","Aurelius Art Gallery Hotel","—","solo","28 nov",7,9728818,"escala","Europa: no cabe",""],
+["Madrid","Ibis Budget Aeropuerto","—","solo","28 nov",7,9857732,"DIRECTO","Europa: no cabe",""],
+["París","Comfort Hotel Porte d'Ivry","—","solo","28 nov",7,11144828,"DIRECTO","Europa: no cabe",""],
+["Barcelona","ibis Barcelona Glories 22","—","solo","28 nov",7,11629888,"DIRECTO","Europa: no cabe",""],
+["Crucero","MSC World America, desde Miami","—","comidas a bordo","28 nov",7,8015400,"vuelo a MIA","Exige visa; propinas aparte",""],
+["Crucero","RC Independence of the Seas, Miami","—","comidas a bordo","29 nov",7,8507500,"vuelo a MIA","Exige visa",""],
+["Crucero","RC Vision of the Seas, San Juan","—","comidas a bordo","29 nov",7,9419100,"vuelo a SJU","Exige visa",""],
+["Cancún","Caribe Internacional (Priceline)","6.0","solo","30 nov",8,4304400,"escala","Otro canal; USD 1.360",""],
+["Cancún","Presidente InterContinental (Falabella)","9.0","solo","30 nov",8,7099432,"escala","Falabella revende Despegar",""],
+["Cancún","Hotel Dos Playas (On Vacation)","—","AI","30 nov",8,17338960,"escala","Fuera de escala",""]
+];
+const BASE=349963;
+const fmt=n=>"$"+Math.round(n).toLocaleString("es-CO").replace(/,/g,".");
+const $=id=>document.getElementById(id);
+const tb=$("tb"),q=$("q"),trB=$("tr"),capB=$("cap"),winB=$("win"),meta=$("meta"),chips=$("chips"),empty=$("empty");
+let sk="ppn",sd=1,act=new Set();
+const rows=D.map(r=>({destino:r[0],hotel:r[1],cal:r[2],plan:r[3],salida:r[4],noches:r[5],base:r[6],vuelo:r[7],nota:r[8],flag:r[9]}));
+const DEST=[...new Set(rows.map(r=>r.destino))].sort((a,b)=>a.localeCompare(b,"es"));
+
+(function(){
+  const max=Math.max(...CURVE.map(c=>c[1]/2/10)), min=Math.min(...CURVE.map(c=>c[1]/2/10));
+  $("curve").innerHTML=CURVE.map(([lab,tot,cls])=>{
+    const v=Math.round(tot/2/10), w=28+72*((v-min)/(max-min||1));
+    return '<div class="brow '+cls+'"><span class="blab">'+lab+'</span>'
+      +'<span class="btrack"><i class="bfill" style="width:'+w.toFixed(1)+'%"></i></span>'
+      +'<span class="bval">'+fmt(v)+'</span></div>';
+  }).join("");
+})();
+
+DEST.forEach(d=>{
+  const b=document.createElement("button");
+  b.className="chip";b.type="button";b.textContent=d;b.setAttribute("aria-pressed","false");
+  b.onclick=()=>{act.has(d)?act.delete(d):act.add(d);b.setAttribute("aria-pressed",act.has(d)?"true":"false");render()};
+  chips.appendChild(b);
+});
+
+function iso(s,p){const m=String(s).match(/(\d+)\s*(nov|dic)/i);if(!m)return null;
+  return new Date(Date.UTC(2026,m[2].toLowerCase()==="nov"?10:11,+m[1]+(p||0))).toISOString().slice(0,10)}
+function link(r){
+  const a=iso(r.salida,0),b=iso(r.salida,r.noches); if(!a||!b) return null;
+  if(/LOS SAUCES/.test(r.hotel)) return ["Booking","https://www.booking.com/hotel/mx/los-sauces-studio-puerto-vallarta.es.html?checkin="+a+"&checkout="+b+"&group_adults=2&no_rooms=1&selected_currency=COP"];
+  const c=CIT[r.destino]; if(!c) return null;
+  return ["Despegar","https://www.despegar.com.co/trip/start/FH/CIT_854/"+c+"/"+a+"/"+b+"/"+c+"/"+a+"/"+b+"/2?from=PSB&nw=true&reSearch=true"];
+}
+function render(){
+  const t=q.value.trim().toLowerCase();
+  let L=rows.map(r=>{const tot=r.base+(trB.checked?(TR[r.destino]??120000):0);
+    return {...r,total:tot,ppn:Math.round(tot/2/r.noches)}});
+  if(act.size)L=L.filter(r=>act.has(r.destino));
+  if(capB.checked)L=L.filter(r=>r.total<=8000000);
+  if(winB.checked)L=L.filter(r=>r.ppn<BASE||r.flag==="base");
+  if(t)L=L.filter(r=>(r.destino+" "+r.hotel+" "+r.plan+" "+r.nota+" "+r.salida).toLowerCase().includes(t));
+  L.sort((a,b)=>{const x=a[sk],y=b[sk];
+    return (typeof x==="number"&&typeof y==="number")?(x-y)*sd:String(x).localeCompare(String(y),"es")*sd});
+  const vis=L.filter(r=>r.total<=8000000).map(r=>r.ppn);
+  const lo=Math.min(...vis,BASE), hi=Math.max(...vis,BASE);
+  const top=[...L].filter(r=>r.total<=8000000).sort((a,b)=>a.ppn-b.ppn).slice(0,3).map(r=>r.hotel+r.salida+r.noches);
+  tb.innerHTML=L.map(r=>{
+    const you=r.flag==="base", best=!you&&top.includes(r.hotel+r.salida+r.noches);
+    const pc=(r.ppn-BASE)/BASE*100;
+    const dl=you?'<span class="pill p-you">tu link</span>'
+      :'<span class="delta '+(pc<0?"dg":"db")+'">'+(pc<0?"":"+")+pc.toFixed(0)+'%</span>';
+    const w=Math.max(6,Math.min(100,((r.ppn-lo)/((hi-lo)||1))*100));
+    const nt=r.nota?(/TRAMPA/.test(r.nota)?'<span class="pill p-bad">ojo</span> '+r.nota.replace("TRAMPA: ",""):r.nota):"";
+    const lk=link(r);
+    return '<tr class="'+(you?"you":(best?"best":""))+'">'
+      +'<td class="hd"><div class="hotel">'+r.hotel+'</div><div class="dest">'+r.destino+'</div></td>'
+      +'<td class="r" data-l="Cal.">'+r.cal+'</td>'
+      +'<td data-l="Plan">'+r.plan+'</td>'
+      +'<td data-l="Salida">'+r.salida+'</td>'
+      +'<td class="r" data-l="Noches">'+r.noches+'</td>'
+      +'<td class="r" data-l="Total"><span class="money">'+fmt(r.total)+'</span></td>'
+      +'<td class="r" data-l="Por pers./noche"><div><span class="ppn">'+fmt(r.ppn)+'</span> '+dl
+        +'<div class="mtr"><i style="width:'+w.toFixed(1)+'%"></i></div></div></td>'
+      +'<td data-l="Vuelo">'+(r.vuelo==="DIRECTO"?'<span class="pill p-good">directo</span>':'<span class="sm">'+r.vuelo+'</span>')+'</td>'
+      +'<td data-l="Nota"><span class="note">'+nt+'</span></td>'
+      +'<td class="lk">'+(lk?'<a class="go" href="'+lk[1]+'" target="_blank" rel="noopener">'+lk[0]+' ↗</a>':'<span class="nolink">sin link</span>')+'</td>'
+      +'</tr>'}).join("");
+  empty.hidden=L.length>0;
+  const names={hotel:"hotel",cal:"calificación",plan:"plan",salida:"salida",noches:"noches",total:"total",ppn:"precio por persona por noche",vuelo:"vuelo"};
+  meta.textContent=L.length+" de "+rows.length+" · orden: "+names[sk]+(sd>0?" ↑":" ↓")+(trB.checked?" · traslado sumado":"")+" · referencia "+fmt(BASE)+" p/p/noche";
+  document.querySelectorAll("thead th[data-k]").forEach(th=>th.classList.toggle("on",th.dataset.k===sk));
+}
+document.querySelectorAll("thead th[data-k]").forEach(th=>{
+  th.onclick=()=>{const k=th.dataset.k;sd=(k===sk)?-sd:1;sk=k;render()}});
+q.oninput=render;trB.onchange=render;capB.onchange=render;winB.onchange=render;
+render();
+</script>
+</body>
+</html>
