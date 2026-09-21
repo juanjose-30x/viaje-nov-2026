@@ -301,6 +301,10 @@ footer p{max-width:80ch}
         <p>Llevan a la búsqueda exacta de esa fila, no a un pago. Despegar no tiene links de pago estables: los de una oferta concreta llevan un identificador de sesión que expira en minutos.</p>
       </div>
       <div class="card warn">
+        <h3>El símbolo ≈</h3>
+        <p>Marca las filas cuyo total lleva <b>algo imputado y no cotizado junto</b>: los Airbnb, porque el vuelo se suma aparte y no se compran en la misma transacción; los cruceros, por las propinas obligatorias; y los desempaquetados de Puerto Vallarta, por la maleta. El resto son precios que alguien vio en una sola pantalla.</p>
+      </div>
+      <div class="card warn">
         <h3>Airbnb está adentro</h3>
         <p>Siete anuncios, con el vuelo ya sumado para que sean comparables. Airbnb muestra el total con todas las tarifas incluidas, así que no hay letra chica de limpieza ni servicio. Pero son dos reservas separadas sin protección entre ellas, y la calificación va sobre cinco, no sobre diez: mira el número de reseñas antes de creerle.</p>
       </div>
@@ -520,9 +524,9 @@ const D=[
 ["Huatulco","Mexico Lindo","—","solo","30 nov",8,7583792,"escala","Pacífico",""],
 ["Bacalar","Hotel Casa Ariana","—","solo","30 nov",8,16833472,"escala","Muy caro por el vuelo",""],
 ["Puerto Vallarta","LOS SAUCES + Viva","8.9","solo","30 nov",8,3902044,"escala NLU","Dos reservas; a 2,9 km de la playa",""],
-["Puerto Vallarta","LOS SAUCES + Viva","8.9","solo","30 nov",9,4351000,"escala NLU","Estimado: maleta imputada",""],
-["Puerto Vallarta","hostal la playa + Viva","—","solo","30 nov",8,3757124,"escala NLU","Sólo cuatro reseñas",""],
-["Panamá","Acuarela Farallón + Copa Classic","—","solo","30 nov",8,4548000,"DIRECTO","Desempaquetado",""],
+["Puerto Vallarta","LOS SAUCES + Viva","8.9","solo","30 nov",9,4351000,"escala NLU","Estimado: maleta imputada","est"],
+["Puerto Vallarta","hostal la playa + Viva","—","solo","30 nov",8,3757124,"escala NLU","Sólo cuatro reseñas","est"],
+["Panamá","Acuarela Farallón + Copa Classic","—","solo","30 nov",8,4548000,"DIRECTO","Desempaquetado","est"],
 ["Madrid","Ibis Budget Aeropuerto","—","solo","28 nov",10,9670968,"DIRECTO","Europa: no cabe",""],
 ["Lisboa","Lisboa Central Hostel","—","desayuno","28 nov",10,9318010,"escala","Europa: no cabe",""],
 ["Lisboa","easyHotel Lisbon","—","solo","28 nov",7,9542990,"escala","Europa: no cabe",""],
@@ -530,16 +534,16 @@ const D=[
 ["Madrid","Ibis Budget Aeropuerto","—","solo","28 nov",7,9857732,"DIRECTO","Europa: no cabe",""],
 ["París","Comfort Hotel Porte d'Ivry","—","solo","28 nov",7,11144828,"DIRECTO","Europa: no cabe",""],
 ["Barcelona","ibis Barcelona Glories 22","—","solo","28 nov",7,11629888,"DIRECTO","Europa: no cabe",""],
-["Crucero","MSC World America, desde Miami","—","comidas a bordo","28 nov",7,8015400,"vuelo a MIA","Exige visa; propinas aparte",""],
-["Crucero","RC Independence of the Seas, Miami","—","comidas a bordo","29 nov",7,8507500,"vuelo a MIA","Exige visa",""],
-["Crucero","RC Vision of the Seas, San Juan","—","comidas a bordo","29 nov",7,9419100,"vuelo a SJU","Exige visa",""],
-["Cancún","Airbnb · Agua los Cuatro Elementos","4.96","solo","28 nov",10,3911845,"escala","Sólo 23 reseñas; Mercado 28, sin playa cerca",""],
-["Tulum","Airbnb · Estudio Centro Tulum","4.4","solo","28 nov",10,4065509,"escala","Sólo 15 reseñas; playa a 3 min EN AUTO",""],
-["Playa del Carmen","Airbnb · Palmarena Apartment","4.8","solo","28 nov",10,4380377,"escala","5 min a pie de la playa; 123 reseñas",""],
-["Playa del Carmen","Airbnb · Suite F/2Pax","4.9","solo","28 nov",10,4431213,"escala","A pasos de la 5a Avenida; 84 reseñas",""],
-["Playa del Carmen","Airbnb · Menesse Midtown","4.76","solo","28 nov",10,4484210,"escala","5 min caminando al mar; 49 reseñas",""],
-["Playa del Carmen","Airbnb · Estudio Condo","4.81","solo","28 nov",10,4501939,"escala","4 cuadras del mar; 67 reseñas",""],
-["Punta Cana","Airbnb · LindaVista ApartaSuite","4.76","solo","28 nov",10,4679226,"DIRECTO","Reseña reciente de 1 estrella por mal olor",""],
+["Crucero","MSC World America, desde Miami","—","comidas a bordo","28 nov",7,8015400,"vuelo a MIA","Exige visa; propinas aparte","est"],
+["Crucero","RC Independence of the Seas, Miami","—","comidas a bordo","29 nov",7,8507500,"vuelo a MIA","Exige visa","est"],
+["Crucero","RC Vision of the Seas, San Juan","—","comidas a bordo","29 nov",7,9419100,"vuelo a SJU","Exige visa","est"],
+["Cancún","Airbnb · Agua los Cuatro Elementos","4.96","solo","28 nov",10,3911845,"escala","Sólo 23 reseñas; Mercado 28, sin playa cerca","est"],
+["Tulum","Airbnb · Estudio Centro Tulum","4.4","solo","28 nov",10,4065509,"escala","Sólo 15 reseñas; playa a 3 min EN AUTO","est"],
+["Playa del Carmen","Airbnb · Palmarena Apartment","4.8","solo","28 nov",10,4380377,"escala","5 min a pie de la playa; 123 reseñas","est"],
+["Playa del Carmen","Airbnb · Suite F/2Pax","4.9","solo","28 nov",10,4431213,"escala","A pasos de la 5a Avenida; 84 reseñas","est"],
+["Playa del Carmen","Airbnb · Menesse Midtown","4.76","solo","28 nov",10,4484210,"escala","5 min caminando al mar; 49 reseñas","est"],
+["Playa del Carmen","Airbnb · Estudio Condo","4.81","solo","28 nov",10,4501939,"escala","4 cuadras del mar; 67 reseñas","est"],
+["Punta Cana","Airbnb · LindaVista ApartaSuite","4.76","solo","28 nov",10,4679226,"DIRECTO","Reseña reciente de 1 estrella por mal olor","est"],
 ["Cancún","Caribe Internacional (Priceline)","6.0","solo","30 nov",8,4304400,"escala","Otro canal; USD 1.360",""],
 ["Cancún","Presidente InterContinental (Falabella)","9.0","solo","30 nov",8,7099432,"escala","Falabella revende Despegar",""],
 ["Cancún","Hotel Dos Playas (On Vacation)","—","AI","30 nov",8,17338960,"escala","Fuera de escala",""]
@@ -614,7 +618,7 @@ function render(){
       +'<td data-l="Plan">'+r.plan+'</td>'
       +'<td data-l="Salida">'+r.salida+'</td>'
       +'<td class="r" data-l="Noches">'+r.noches+'</td>'
-      +'<td class="r" data-l="Total"><span class="money">'+fmt(r.total)+'</span></td>'
+      +'<td class="r" data-l="Total"><span class="money">'+(r.flag==="est"?"≈":"")+fmt(r.total)+'</span></td>'
       +'<td class="r" data-l="Por pers./noche"><div><span class="ppn">'+fmt(r.ppn)+'</span> '+dl
         +'<div class="mtr"><i style="width:'+w.toFixed(1)+'%"></i></div></div></td>'
       +'<td data-l="Vuelo">'+(r.vuelo==="DIRECTO"?'<span class="pill p-good">directo</span>':'<span class="sm">'+r.vuelo+'</span>')+'</td>'
