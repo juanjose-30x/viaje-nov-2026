@@ -242,7 +242,7 @@ footer p{max-width:80ch}
 <div class="tools">
   <div class="wrap">
     <div class="trow">
-      <div class="search"><input type="search" id="q" placeholder="Buscar hotel, destino, plan…" autocomplete="off" aria-label="Buscar"></div>
+      <div class="search"><input type="search" id="q" placeholder="Buscar: airbnb cancun · vrbo playa · 9.6 · directo…" autocomplete="off" aria-label="Buscar"></div>
       <label class="sw"><input type="checkbox" id="tr"> Sumar traslado</label>
       <label class="sw"><input type="checkbox" id="cap"> Bajo 8 millones</label>
       <label class="sw"><input type="checkbox" id="win"> Sólo las que ganan</label>
@@ -772,8 +772,22 @@ DEST.forEach(d=>{
 function iso(s,p){const m=String(s).match(/(\d+)\s*(nov|dic)/i);if(!m)return null;
   return new Date(Date.UTC(2026,m[2].toLowerCase()==="nov"?10:11,+m[1]+(p||0))).toISOString().slice(0,10)}
 function link(r){
-  const a=iso(r.salida,0),b=iso(r.salida,r.noches); if(!a||!b) return null;
-  if(/LOS SAUCES/.test(r.hotel)) return ["Booking","https://www.booking.com/hotel/mx/los-sauces-studio-puerto-vallarta.es.html?checkin="+a+"&checkout="+b+"&group_adults=2&no_rooms=1&selected_currency=COP"];
+  const a=iso(r.salida,0), b=iso(r.salida,r.noches); if(!a||!b) return null;
+  const ciudad={"Playa del Carmen":"Playa-del-Carmen--Quintana-Roo--Mexico",
+    "Riviera Maya":"Playa-del-Carmen--Quintana-Roo--Mexico","Cancún":"Cancun--Quintana-Roo--Mexico",
+    "Tulum":"Tulum--Quintana-Roo--Mexico","Punta Cana":"Punta-Cana--Republica-Dominicana"}[r.destino];
+  const q=encodeURIComponent(r.destino+", México");
+  // La plataforma manda sobre la ciudad: una fila de Vrbo no puede abrir en Despegar.
+  if(/^Airbnb/.test(r.hotel)&&ciudad)
+    return ["Airbnb","https://www.airbnb.com.co/s/"+ciudad+"/homes?checkin="+a+"&checkout="+b+"&adults=2&currency=COP&room_types%5B%5D=Entire%20home%2Fapt"];
+  if(/^Vrbo/.test(r.hotel))
+    return ["Vrbo","https://www.vrbo.com/search?destination="+q+"&startDate="+a+"&endDate="+b+"&adults=2"];
+  if(/^Booking/.test(r.hotel))
+    return ["Booking","https://www.booking.com/searchresults.es.html?ss="+q+"&checkin="+a+"&checkout="+b+"&group_adults=2&no_rooms=1&selected_currency=COP&nflt=ht_id%3D201"];
+  if(/LOS SAUCES/.test(r.hotel))
+    return ["Booking","https://www.booking.com/hotel/mx/los-sauces-studio-puerto-vallarta.es.html?checkin="+a+"&checkout="+b+"&group_adults=2&no_rooms=1&selected_currency=COP"];
+  if(/Priceline/.test(r.hotel)||/Falabella/.test(r.hotel)||/On Vacation/.test(r.hotel)||/Copa|Viva|hostal la playa/.test(r.hotel)) return null;
+  if(r.destino==="Crucero") return null;
   const c=CIT[r.destino]; if(!c) return null;
   return ["Despegar","https://www.despegar.com.co/trip/start/FH/CIT_854/"+c+"/"+a+"/"+b+"/"+c+"/"+a+"/"+b+"/2?from=PSB&nw=true&reSearch=true"];
 }
@@ -790,7 +804,11 @@ function render(){
   const CAP=foodB.checked?Infinity:8000000;
   if(capB.checked)L=L.filter(r=>r.total<=CAP);
   if(winB.checked)L=L.filter(r=>r.ppn<BASE||r.flag==="base");
-  if(t)L=L.filter(r=>(r.destino+" "+r.hotel+" "+r.plan+" "+r.nota+" "+r.salida).toLowerCase().includes(t));
+  // Busqueda por palabras sueltas: "airbnb cancun" debe encontrar lo mismo que "cancun airbnb".
+  if(t){const terms=t.split(/\s+/).filter(Boolean);
+    L=L.filter(r=>{const hay=(r.destino+" "+r.hotel+" "+r.cal+" "+r.plan+" "+r.nota+" "+r.salida+" "+r.vuelo+" "+r.noches+"n")
+      .toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+      return terms.every(w=>hay.includes(w.normalize("NFD").replace(/[\u0300-\u036f]/g,"")))});}
   L.sort((a,b)=>{const x=a[sk],y=b[sk];
     return (typeof x==="number"&&typeof y==="number")?(x-y)*sd:String(x).localeCompare(String(y),"es")*sd});
   const vis=L.filter(r=>r.total<=CAP).map(r=>r.ppn);
