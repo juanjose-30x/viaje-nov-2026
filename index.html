@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Viaje nov 2026 · todas las opciones</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="191 opciones de viaje desde Bogotá cotizadas y comparadas por costo real por persona por noche.">
+<meta name="description" content="219 opciones de viaje desde Bogotá cotizadas y comparadas por costo real por persona por noche.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap">
@@ -199,7 +199,7 @@ footer p{max-width:80ch}
 <header class="wrap">
   <p class="eyebrow">Cotizado el 21 de septiembre de 2026</p>
   <h1>Bogotá,<br>noviembre 2026</h1>
-  <p class="lede" style="margin-top:14px">Ciento noventa y una combinaciones de destino, hotel, fecha y duración. Todas vistas en pantalla, todas para dos adultos con vuelo incluido, todas comparadas por el único número que sirve: lo que cuesta cada noche por persona.</p>
+  <p class="lede" style="margin-top:14px">Doscientas diecinueve combinaciones de destino, hotel, fecha y duración. Todas vistas en pantalla, todas para dos adultos con vuelo incluido, todas comparadas por el único número que sirve: lo que cuesta cada noche por persona.</p>
 
   <div class="hgrid">
     <div class="pick">
@@ -223,7 +223,7 @@ footer p{max-width:80ch}
 
     <div style="display:grid;gap:13px;align-content:start">
       <div class="stats">
-        <div class="stat"><div class="v num">191</div><div class="k">opciones cotizadas</div></div>
+        <div class="stat"><div class="v num">219</div><div class="k">opciones cotizadas</div></div>
         <div class="stat"><div class="v num">39</div><div class="k">destinos barridos</div></div>
         <div class="stat"><div class="v num">13</div><div class="k">plataformas cruzadas</div></div>
         <div class="stat"><div class="v num">41%</div><div class="k">menos por noche</div></div>
@@ -251,7 +251,7 @@ footer p{max-width:80ch}
         <option value="100000">$100.000 p/p/día</option>
         <option value="150000" selected>$150.000 p/p/día</option>
         <option value="200000">$200.000 p/p/día</option>
-        <option value="273000">$273.000 p/p/día</option>
+        <option value="272674">$272.674 · empate con el AI</option>
       </select>
     </div>
     <div class="chips" id="chips"></div>
@@ -294,11 +294,15 @@ footer p{max-width:80ch}
       </div>
       <div class="card good">
         <h3>El interruptor de comida</h3>
-        <p>Imputa el gasto diario según lo que cubre cada plan: el todo incluido no suma nada, el desayuno suma el 75% y sólo alojamiento suma el 100%. Es el cálculo que hace comparable un resort con un hotel urbano. Con la comida activa el techo de ocho millones deja de aplicarse, porque ya no es precio de compra.</p>
+        <p>Imputa lo que vas a gastar comiendo, según lo que ya cubre cada plan. El <b>todo incluido no suma nada</b>. El <b>desayuno incluido descuenta $60.000 por persona por día</b>, que es lo que cuesta desayunar de verdad. <b>Sólo alojamiento suma el día completo.</b> Es el cálculo que hace comparable un resort con un hotel urbano. Con la comida activa, el techo de ocho millones deja de aplicarse: ya no es precio de compra sino costo del viaje.</p>
       </div>
       <div class="card warn">
         <h3>Los botones de abrir</h3>
         <p>Llevan a la búsqueda exacta de esa fila, no a un pago. Despegar no tiene links de pago estables: los de una oferta concreta llevan un identificador de sesión que expira en minutos.</p>
+      </div>
+      <div class="card warn">
+        <h3>Los precios se mueven durante el día</h3>
+        <p>Despegar reprecia solo. El Krystal Urban a diez noches salía en $6.649.912 en la primera pasada y en <b>$5.700.002</b> en la última, con casi un millón de diferencia el mismo día. La tabla lleva la lectura más reciente de cada fila. Es dato, no error: confirma el precio el día que compres.</p>
       </div>
       <div class="card warn">
         <h3>El símbolo ≈</h3>
@@ -443,7 +447,6 @@ const D=[
 ["Cancún","Aquamarina Beach Hotel","7.5","solo","28 nov",8,5628546,"escala","",""],
 ["Cancún","Fairfield Inn by Marriott","9.2","desayuno","28 nov",8,5739918,"escala","",""],
 ["Cancún","Residence Inn by Marriott","8.8","desayuno","28 nov",8,6199190,"escala","",""],
-["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","28 nov",10,4809250,"escala","Zona hotelera; el mejor de Cancún",""],
 ["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","28 nov",9,4952464,"escala","",""],
 ["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","28 nov",11,5377524,"escala","",""],
 ["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","29 nov",10,5357276,"escala","",""],
@@ -459,9 +462,38 @@ const D=[
 ["Cancún","Hotel Puerto Juárez","—","solo","1 dic",8,5323856,"escala","",""],
 ["Cancún","Krystal Urban & Beach Club","8.2","solo","1 dic",8,5459952,"escala","",""],
 ["Cancún","Fairfield Inn by Marriott","9.2","desayuno","1 dic",8,5699017,"escala","",""],
-["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","28 nov",10,5910936,"escala","",""],
-["Cancún","Krystal Urban & Beach Club","8.2","solo","28 nov",10,6649912,"escala","",""],
-["Cancún","Fairfield Inn by Marriott","9.2","desayuno","28 nov",10,7099104,"escala","",""],
+["Cancún","Hotel Los Girasoles","8.8","solo","28 nov",10,4572868,"escala","Centro, cerca del Mercado 28",""],
+["Cancún","Sotavento Hotel & Yacht Club","7.2","desayuno","28 nov",10,4811880,"escala","ZONA HOTELERA confirmada",""],
+["Cancún","Hotel Kavia Cancún","7.8","solo","28 nov",10,4897502,"escala","ZONA HOTELERA confirmada",""],
+["Cancún","Hotel Plaza Caribe","7.8","solo","28 nov",10,4980824,"escala","",""],
+["Cancún","ibis Cancún Centro","8.6","solo","28 nov",10,5089960,"escala","Centro confirmado",""],
+["Cancún","Nílu Cancún by Selina","7.8","solo","28 nov",10,5199970,"escala","Zona hotelera",""],
+["Cancún","Hotel Puerto Juárez","—","solo","28 nov",10,5345110,"escala","Puerto Juárez",""],
+["Cancún","Extended Suites Cumbres","—","solo","28 nov",10,5409876,"escala","Barrio Cumbres",""],
+["Cancún","CASA ULA","8.7","solo","28 nov",10,5415058,"escala","Centro, a 1 km",""],
+["Cancún","Bsea Cancún Plaza","7.6","solo","28 nov",10,5445898,"escala","",""],
+["Cancún","Krystal Urban & Beach Club","8.2","solo","28 nov",10,5700002,"escala","Centro; el mismo de tu link",""],
+["Cancún","Cyan Cancún Resort & Spa","7.6","solo","28 nov",10,5777548,"escala","",""],
+["Cancún","Aquamarina Beach Hotel","7.5","solo","28 nov",10,5859960,"escala","",""],
+["Cancún","Mezcal Boutique Hotel","9.4","solo","28 nov",10,5934900,"escala","Centro, a 2 km. La nota más alta bajo 8M",""],
+["Cancún","Hive Cancún by G Hotels","8.4","desayuno","28 nov",10,5994992,"escala","",""],
+["Cancún","Hyatt Place Cancún Airport","9.2","solo","28 nov",10,6104048,"escala","Aeropuerto",""],
+["Cancún","Fairfield Inn Marriott Airport","9.2","desayuno","28 nov",10,6174188,"escala","Aeropuerto",""],
+["Cancún","Fairfield Inn Marriott Downtown","8.6","desayuno","28 nov",10,6245822,"escala","Centro",""],
+["Cancún","one Cancún Centro","8.6","desayuno","28 nov",10,6288776,"escala","Centro",""],
+["Cancún","Courtyard By Marriott Airport","—","solo","28 nov",10,6313990,"escala","Aeropuerto",""],
+["Cancún","San Francisco Cancún","9.4","solo","28 nov",10,6430326,"escala","",""],
+["Cancún","Residence Inn by Marriott","8.8","desayuno","28 nov",10,6596358,"escala","Zona hotelera",""],
+["Cancún","Four Points by Sheraton Centro","8.6","solo","28 nov",10,6780418,"escala","Centro",""],
+["Cancún","Fiesta Inn Las Américas","8.6","solo","28 nov",10,7120462,"escala","Las Américas",""],
+["Cancún","Fiesta Americana Cancún Villas","8.6","solo","28 nov",10,7151588,"escala","",""],
+["Cancún","1st Luxury Warehouse","8.8","solo","28 nov",10,7213430,"escala","",""],
+["Cancún","Aloft by Marriott Cancún","8.6","solo","28 nov",10,7733466,"escala","",""],
+["Cancún","Hilton Garden Inn Airport","8.6","solo","28 nov",10,7823060,"escala","Aeropuerto",""],
+["Cancún","Beachscape Kin Ha Villas","8.6","solo","28 nov",10,7933642,"escala","Zona hotelera",""],
+["Cancún","Emporio Cancún","8.1","AI","28 nov",10,8037994,"escala","El AI opcional se paga aparte",""],
+["Cancún","Cancun Bay All Inclusive","7.9","AI","28 nov",10,8739956,"escala","",""],
+["Cancún","Oasis Palm","6.6","AI","28 nov",10,8999106,"escala","",""],
 ["Cancún","Hotel Puerto Juárez","—","solo","29 nov",8,5463694,"escala","",""],
 ["Cancún","Krystal Urban & Beach Club","8.2","solo","29 nov",8,5599414,"escala","TU LINK ORIGINAL","base"],
 ["Cancún","Fairfield Inn by Marriott","9.2","desayuno","29 nov",8,5949923,"escala","",""],
@@ -553,8 +585,15 @@ const fmt=n=>"$"+Math.round(n).toLocaleString("es-CO").replace(/,/g,".");
 const $=id=>document.getElementById(id);
 const tb=$("tb"),q=$("q"),trB=$("tr"),capB=$("cap"),winB=$("win"),meta=$("meta"),chips=$("chips"),empty=$("empty");
 const foodB=$("food"),rateS=$("rate");
-// Cuanto de la comida del dia NO cubre el plan del hotel
-const UNCOVERED={"AI":0,"comidas a bordo":0.15,"desayuno":0.75,"solo":1};
+// Lo que el plan del hotel te AHORRA por persona por dia, en pesos.
+// El desayuno se valora aparte porque es un gasto real y acotado, no un porcentaje.
+const DESAYUNO=60000;
+function uncovered(plan, rate){
+  if(plan==="AI") return 0;
+  if(plan==="comidas a bordo") return Math.max(0, rate*0.15);   // a bordo faltan bebidas
+  if(plan==="desayuno") return Math.max(0, rate-DESAYUNO);
+  return rate;
+}
 let sk="ppn",sd=1,act=new Set();
 const rows=D.map(r=>({destino:r[0],hotel:r[1],cal:r[2],plan:r[3],salida:r[4],noches:r[5],base:r[6],vuelo:r[7],nota:r[8],flag:r[9]}));
 const DEST=[...new Set(rows.map(r=>r.destino))].sort((a,b)=>a.localeCompare(b,"es"));
@@ -590,7 +629,7 @@ function render(){
   const rate=+rateS.value;
   let L=rows.map(r=>{
     let tot=r.base+(trB.checked?(TR[r.destino]??120000):0);
-    const meal=foodB.checked?Math.round(rate*(UNCOVERED[r.plan]??1)*2*r.noches):0;
+    const meal=foodB.checked?Math.round(uncovered(r.plan,rate)*2*r.noches):0;
     tot+=meal;
     return {...r,meal,total:tot,ppn:Math.round(tot/2/r.noches)}});
   if(act.size)L=L.filter(r=>act.has(r.destino));
