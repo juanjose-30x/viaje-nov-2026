@@ -156,6 +156,7 @@ td.r{text-align:right;white-space:nowrap}
 .go{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:700;padding:5px 10px;
   border-radius:7px;background:var(--acc);color:var(--acc-ink);text-decoration:none;white-space:nowrap}
 .go:hover{filter:brightness(1.1)}
+  .go.dir{background:var(--good)}
 .nolink{color:var(--ink-3);font-size:12px}
 .empty{padding:36px;text-align:center;color:var(--ink-3)}
 
@@ -298,7 +299,7 @@ footer p{max-width:80ch}
       </div>
       <div class="card warn">
         <h3>Los botones de abrir</h3>
-        <p>Al hacer clic pasan dos cosas: se abre la búsqueda con el destino y las fechas de esa fila, y <b>se copia el nombre del hotel a tu portapapeles</b>. En la barra lateral de Despegar, pégalo en el campo <b>«Ingrese el nombre del alojamiento»</b> y llegas a esa fila exacta. No hay link directo al hotel porque Despegar genera su identificador en el momento del clic: no existe antes y no se puede construir.</p>
+        <p>Los botones verdes que dicen <b>«Al hotel»</b> van directo a la ficha del paquete, sin pasos intermedios. Sólo pude capturar dos: el identificador lo acuña Despegar al seleccionar el hotel, no se puede construir, y <b>caduca con la sesión de búsqueda</b>. Capturar los 190 tomaría unas cuatro horas y los primeros estarían vencidos al terminar.</p><p style="margin-top:7px">Los demás botones hacen dos cosas: abren la búsqueda con el destino y las fechas de esa fila, y <b>copian el nombre del hotel a tu portapapeles</b>. En la barra lateral de Despegar, pégalo en el campo <b>«Ingrese el nombre del alojamiento»</b> y llegas a esa fila exacta. No hay link directo al hotel porque Despegar genera su identificador en el momento del clic: no existe antes y no se puede construir.</p>
       </div>
       <div class="card good">
         <h3>El líder aguantó el barrido profundo</h3>
@@ -364,6 +365,12 @@ const TR={"Playa del Carmen":178000,"Riviera Maya":178000,"Cancún":80000,"Tulum
 "París":100000,"Barcelona":100000,"Cozumel":150000,"Isla Mujeres":150000,"Mazatlán":90000,"Mérida":90000,
 "Campeche":90000,"Puerto Escondido":90000,"Los Cabos":90000,"Huatulco":90000,"Bacalar":250000,"San Juan":120000,
 "Jamaica":120000,"Nassau":120000,"Isla Margarita":120000,"Roatán":150000,"Crucero":0};
+// Links DIRECTOS al hotel, capturados a mano. El identificador PR lo acuña Despegar
+// al seleccionar el hotel: no se puede construir, y caduca con la sesion de busqueda.
+const DIRECTO={
+  "MAYAN ART Hotel Boutique":"https://www.despegar.com.co/trip/accommodations/detail/PR527d17bc15604f0e983c6f1216998cb829833882?tripItem=H1&hotel_product_id=H1&flow=FH&searchParams=RkgvQ0lUXzg1NC9DSVRfNTU4NC8yMDI2LTExLTI4LzIwMjYtMTItMDgvQ0lUXzU1ODQvMjAyNi0xMS0yOC8yMDI2LTEyLTA4LzJ8SDE6SCxGMDpGLFhTOlhT&stepNum=0&throughResults=true&currency=COP",
+  "Live Coco Suites":"https://www.despegar.com.co/trip/accommodations/detail/PR85bfa256468c47299732b4f53f5cff2729833892?tripItem=H1&hotel_product_id=H1&flow=FH&searchParams=RkgvQ0lUXzg1NC9DSVRfNTU4NC8yMDI2LTExLTI4LzIwMjYtMTItMDgvQ0lUXzU1ODQvMjAyNi0xMS0yOC8yMDI2LTEyLTA4LzJ8SDE6SCxGMDpGLFhTOlhT&stepNum=0&throughResults=true&currency=COP"
+};
 const CIT={"Playa del Carmen":"CIT_5584","Riviera Maya":"CIT_5584","Cancún":"CIT_1569","Punta Cana":"CIT_5963",
 "San Andrés":"CIT_89","Cartagena":"CIT_1535","Santa Marta":"CIT_6890","Aruba":"CIT_420","Curazao":"CIT_1573"};
 const CURVE=[["28 nov",4131198,"best"],["29 nov",4693022,""],["30 nov",4539384,""],["4 dic",5269350,""],["5 dic",4688984,""]];
@@ -773,6 +780,8 @@ function iso(s,p){const m=String(s).match(/(\d+)\s*(nov|dic)/i);if(!m)return nul
   return new Date(Date.UTC(2026,m[2].toLowerCase()==="nov"?10:11,+m[1]+(p||0))).toISOString().slice(0,10)}
 function link(r){
   const a=iso(r.salida,0), b=iso(r.salida,r.noches); if(!a||!b) return null;
+  // Un link directo sólo vale para su fecha y duración exactas.
+  if(r.salida==="28 nov"&&r.noches===10&&DIRECTO[r.hotel]) return ["Al hotel",DIRECTO[r.hotel],1];
   const ciudad={"Playa del Carmen":"Playa-del-Carmen--Quintana-Roo--Mexico",
     "Riviera Maya":"Playa-del-Carmen--Quintana-Roo--Mexico","Cancún":"Cancun--Quintana-Roo--Mexico",
     "Tulum":"Tulum--Quintana-Roo--Mexico","Punta Cana":"Punta-Cana--Republica-Dominicana"}[r.destino];
@@ -834,7 +843,7 @@ function render(){
         +'<div class="mtr"><i style="width:'+w.toFixed(1)+'%"></i></div></div></td>'
       +'<td data-l="Vuelo">'+(r.vuelo==="DIRECTO"?'<span class="pill p-good">directo</span>':'<span class="sm">'+r.vuelo+'</span>')+'</td>'
       +'<td data-l="Nota"><span class="note">'+nt+'</span></td>'
-      +'<td class="lk">'+(lk?'<a class="go" href="'+lk[1]+'" target="_blank" rel="noopener" data-h="'+r.hotel.replace(/"/g,'&quot;')+'">'+lk[0]+' ↗</a>':'<span class="nolink">sin link</span>')+'</td>'
+      +'<td class="lk">'+(lk?'<a class="go'+(lk[2]?' dir':'')+'" href="'+lk[1]+'" target="_blank" rel="noopener" data-h="'+r.hotel.replace(/"/g,'&quot;')+'">'+lk[0]+' ↗</a>':'<span class="nolink">sin link</span>')+'</td>'
       +'</tr>'}).join("");
   empty.hidden=L.length>0;
   const names={hotel:"hotel",cal:"calificación",plan:"plan",salida:"salida",noches:"noches",total:"total",ppn:"precio por persona por noche",vuelo:"vuelo"};
