@@ -113,6 +113,9 @@ header{padding-block:clamp(36px,6vw,66px) 30px}
   background:var(--surface);border:1px solid var(--edge);border-radius:9px;padding:8px 12px;white-space:nowrap;user-select:none}
 .sw input{width:16px;height:16px;accent-color:var(--acc);cursor:pointer;margin:0}
 .sw:has(input:checked){border-color:var(--acc);color:var(--ink);background:var(--acc-soft)}
+#rate{font:inherit;font-size:13px;padding:8px 10px;border:1px solid var(--edge);border-radius:9px;background:var(--surface);color:var(--ink-2);cursor:pointer}
+#rate:disabled{opacity:.42;cursor:not-allowed}
+#rate:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
 .chip{font:inherit;font-size:12.5px;font-weight:600;padding:5px 12px;border:1px solid var(--edge);
   background:var(--surface);color:var(--ink-2);border-radius:99px;cursor:pointer}
@@ -243,6 +246,13 @@ footer p{max-width:80ch}
       <label class="sw"><input type="checkbox" id="tr"> Sumar traslado</label>
       <label class="sw"><input type="checkbox" id="cap"> Bajo 8 millones</label>
       <label class="sw"><input type="checkbox" id="win"> Sólo las que ganan</label>
+      <label class="sw"><input type="checkbox" id="food"> Sumar comida</label>
+      <select id="rate" aria-label="Gasto diario en comida por persona">
+        <option value="100000">$100.000 p/p/día</option>
+        <option value="150000" selected>$150.000 p/p/día</option>
+        <option value="200000">$200.000 p/p/día</option>
+        <option value="273000">$273.000 p/p/día</option>
+      </select>
     </div>
     <div class="chips" id="chips"></div>
     <p class="meta" id="meta"></p>
@@ -281,6 +291,10 @@ footer p{max-width:80ch}
       <div class="card">
         <h3>El interruptor de traslado</h3>
         <p>Ningún precio de agencia incluye el traslado del aeropuerto al hotel. Actívalo y la tabla se reordena: Playa del Carmen carga $178.000 por estar a una hora de Cancún, y Tulum $294.000 por estar a dos.</p>
+      </div>
+      <div class="card good">
+        <h3>El interruptor de comida</h3>
+        <p>Imputa el gasto diario según lo que cubre cada plan: el todo incluido no suma nada, el desayuno suma el 75% y sólo alojamiento suma el 100%. Es el cálculo que hace comparable un resort con un hotel urbano. Con la comida activa el techo de ocho millones deja de aplicarse, porque ya no es precio de compra.</p>
       </div>
       <div class="card warn">
         <h3>Los botones de abrir</h3>
@@ -523,6 +537,9 @@ const BASE=349963;
 const fmt=n=>"$"+Math.round(n).toLocaleString("es-CO").replace(/,/g,".");
 const $=id=>document.getElementById(id);
 const tb=$("tb"),q=$("q"),trB=$("tr"),capB=$("cap"),winB=$("win"),meta=$("meta"),chips=$("chips"),empty=$("empty");
+const foodB=$("food"),rateS=$("rate");
+// Cuanto de la comida del dia NO cubre el plan del hotel
+const UNCOVERED={"AI":0,"comidas a bordo":0.15,"desayuno":0.75,"solo":1};
 let sk="ppn",sd=1,act=new Set();
 const rows=D.map(r=>({destino:r[0],hotel:r[1],cal:r[2],plan:r[3],salida:r[4],noches:r[5],base:r[6],vuelo:r[7],nota:r[8],flag:r[9]}));
 const DEST=[...new Set(rows.map(r=>r.destino))].sort((a,b)=>a.localeCompare(b,"es"));
@@ -552,22 +569,29 @@ function link(r){
   const c=CIT[r.destino]; if(!c) return null;
   return ["Despegar","https://www.despegar.com.co/trip/start/FH/CIT_854/"+c+"/"+a+"/"+b+"/"+c+"/"+a+"/"+b+"/2?from=PSB&nw=true&reSearch=true"];
 }
+function BREF0(){return foodB.checked?(BASE+ +rateS.value):BASE}
 function render(){
   const t=q.value.trim().toLowerCase();
-  let L=rows.map(r=>{const tot=r.base+(trB.checked?(TR[r.destino]??120000):0);
-    return {...r,total:tot,ppn:Math.round(tot/2/r.noches)}});
+  const rate=+rateS.value;
+  let L=rows.map(r=>{
+    let tot=r.base+(trB.checked?(TR[r.destino]??120000):0);
+    const meal=foodB.checked?Math.round(rate*(UNCOVERED[r.plan]??1)*2*r.noches):0;
+    tot+=meal;
+    return {...r,meal,total:tot,ppn:Math.round(tot/2/r.noches)}});
   if(act.size)L=L.filter(r=>act.has(r.destino));
-  if(capB.checked)L=L.filter(r=>r.total<=8000000);
+  const CAP=foodB.checked?Infinity:8000000;
+  if(capB.checked)L=L.filter(r=>r.total<=CAP);
   if(winB.checked)L=L.filter(r=>r.ppn<BASE||r.flag==="base");
   if(t)L=L.filter(r=>(r.destino+" "+r.hotel+" "+r.plan+" "+r.nota+" "+r.salida).toLowerCase().includes(t));
   L.sort((a,b)=>{const x=a[sk],y=b[sk];
     return (typeof x==="number"&&typeof y==="number")?(x-y)*sd:String(x).localeCompare(String(y),"es")*sd});
-  const vis=L.filter(r=>r.total<=8000000).map(r=>r.ppn);
+  const vis=L.filter(r=>r.total<=CAP).map(r=>r.ppn);
   const lo=Math.min(...vis,BASE), hi=Math.max(...vis,BASE);
-  const top=[...L].filter(r=>r.total<=8000000).sort((a,b)=>a.ppn-b.ppn).slice(0,3).map(r=>r.hotel+r.salida+r.noches);
+  const top=[...L].filter(r=>r.total<=CAP).sort((a,b)=>a.ppn-b.ppn).slice(0,3).map(r=>r.hotel+r.salida+r.noches);
   tb.innerHTML=L.map(r=>{
     const you=r.flag==="base", best=!you&&top.includes(r.hotel+r.salida+r.noches);
-    const pc=(r.ppn-BASE)/BASE*100;
+    const BREF=foodB.checked?(BASE+Math.round(rate*2*8)/2/8):BASE;
+    const pc=(r.ppn-BREF)/BREF*100;
     const dl=you?'<span class="pill p-you">tu link</span>'
       :'<span class="delta '+(pc<0?"dg":"db")+'">'+(pc<0?"":"+")+pc.toFixed(0)+'%</span>';
     const w=Math.max(6,Math.min(100,((r.ppn-lo)/((hi-lo)||1))*100));
@@ -588,12 +612,14 @@ function render(){
       +'</tr>'}).join("");
   empty.hidden=L.length>0;
   const names={hotel:"hotel",cal:"calificación",plan:"plan",salida:"salida",noches:"noches",total:"total",ppn:"precio por persona por noche",vuelo:"vuelo"};
-  meta.textContent=L.length+" de "+rows.length+" · orden: "+names[sk]+(sd>0?" ↑":" ↓")+(trB.checked?" · traslado sumado":"")+" · referencia "+fmt(BASE)+" p/p/noche";
+  meta.textContent=L.length+" de "+rows.length+" · orden: "+names[sk]+(sd>0?" ↑":" ↓")+(trB.checked?" · traslado":"")+(foodB.checked?" · comida a "+fmt(rate)+"/día":"")+" · referencia "+fmt(BREF0())+" p/p/noche";
   document.querySelectorAll("thead th[data-k]").forEach(th=>th.classList.toggle("on",th.dataset.k===sk));
 }
 document.querySelectorAll("thead th[data-k]").forEach(th=>{
   th.onclick=()=>{const k=th.dataset.k;sd=(k===sk)?-sd:1;sk=k;render()}});
+function syncFood(){rateS.disabled=!foodB.checked;render()}
 q.oninput=render;trB.onchange=render;capB.onchange=render;winB.onchange=render;
+foodB.onchange=syncFood;rateS.onchange=render;rateS.disabled=true;
 render();
 </script>
 </body>
